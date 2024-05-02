@@ -1,4 +1,4 @@
-# Leader
+# Leader (Projeto em andamento)
 ## API Leader - Documentação
 Este projeto consiste em uma API desenvolvida com Django e Django Rest Framework para gerenciar produtos e carrinhos de compras em um sistema de comércio.
 
