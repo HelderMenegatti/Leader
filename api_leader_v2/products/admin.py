@@ -1,7 +1,8 @@
 from django.contrib import admin
-from products.models import Product, PriceHistory
+from products.models import Product, PriceHistory, Cart, CartItem
 
 
+# @admin.register(PriceHistory)
 class PriceHistoryInline(admin.TabularInline):
     model = PriceHistory
     extra = 0
@@ -27,3 +28,12 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 admin.site.register(PriceHistory)
+
+@admin.register(Cart)
+class CartAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(CartItem)
+class CartItemAdmin(admin.ModelAdmin):
+    pass

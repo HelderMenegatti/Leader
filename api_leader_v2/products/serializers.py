@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from products.models import Product, PriceHistory
+from products.models import Product, PriceHistory, Cart, CartItem
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -35,3 +35,14 @@ class ProductSerializer(serializers.ModelSerializer):
         PriceHistory.objects.create(product=instance, price=new_price)
         return super().update(instance, validated_data)
       
+
+class CartSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Cart
+        fields = '__all__'
+
+
+class CartItemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model =CartItem
+        fields = '__all__'
