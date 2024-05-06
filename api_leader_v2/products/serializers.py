@@ -6,21 +6,29 @@ class ProductSerializer(serializers.ModelSerializer):
     price = serializers.SerializerMethodField()
     new_price = serializers.DecimalField(max_digits=10, decimal_places=2, write_only=True)
 
+    # image = serializers.SerializerMethodField()
+
+    stock = serializers.SerializerMethodField()
+
     class Meta:
         model = Product
         fields = [
             "id",
             "product_code", 
             "name",
-            "description",
-            "unit_measurement",
+            # "description",
+            "get_unit_measurement_display",
             "price",
             "new_price",
+            "stock"
         ]
 
 
     def get_price(self, obj):
         return obj.price_history.first().price
+
+    def get_stock(self, obj):
+        return True
 
 
     def create(self, validated_data):
