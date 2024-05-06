@@ -16,10 +16,15 @@
       <v-app-bar-title>Leader</v-app-bar-title>
 
       <template v-slot:append>
+        
+        <v-btn icon="mdi-magnify"></v-btn>
+        
         <v-btn icon="mdi-heart"></v-btn>
 
-        <v-btn icon="mdi-magnify"></v-btn>
+        <v-btn icon="mdi-cart-outline"></v-btn>
 
+        <v-btn icon="mdi-account"></v-btn>
+        
         <v-btn icon="mdi-dots-vertical"></v-btn>
       </template>
 
@@ -55,7 +60,10 @@
           </template>
         </v-row>
       </v-container> -->
-      <router-view></router-view>
+      <div class="defalt-size-project-body">
+
+        <router-view></router-view>
+      </div>
     </v-main>
   </v-app>
 </template>
@@ -71,3 +79,11 @@
     data: () => ({ drawer: null }),
   }
 </script>
+
+<style scoped>
+.defalt-size-project-body{
+  margin-top: 2%;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+</style>

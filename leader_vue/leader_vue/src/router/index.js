@@ -9,28 +9,8 @@ import { createRouter, createWebHistory } from 'vue-router/auto'
 import { setupLayouts } from 'virtual:generated-layouts'
 import Products from '@/pages/Products.vue'
 import ListProducts from '@/pages/ListProducts.vue'
+import Novo from '@/pages/Novo.vue'
 import DefaultLayout from '@/layouts/default.vue'
-
-const routes = [
-  {
-    path: '/',
-    component: DefaultLayout,
-    children: [
-      {
-        path: '/',
-        name: 'Products',
-        component: Products,
-      },
-      {
-        path: '/list-products',
-        name: 'ListProducts',
-        component: ListProducts,
-      },
-    ],
-  },
-]
-
-
 
 
 const router = createRouter({
@@ -50,6 +30,11 @@ const router = createRouter({
           path: '/list-products',
           name: 'ListProducts',
           component: ListProducts,
+        },
+        {
+          path: '/novo',
+          name: 'Novo',
+          component: Novo,
         },
       ],
     },

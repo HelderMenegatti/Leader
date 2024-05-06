@@ -1,13 +1,21 @@
 <template>
-  <TableDataDisplay/>
+  <div>
+
+    <TableDataDisplay />
+  </div>
 </template>
 
-<script>
+<script setup>
+  import { useProductStore } from '@/stores/products'
 
+  import { onMounted, ref } from 'vue';
 
-export default {
+  const productsStore = useProductStore();
 
-}
+  onMounted(()=>{
+    productsStore.getProducts()
+  })
+  
 </script>
 
 <style>
