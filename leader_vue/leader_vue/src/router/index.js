@@ -10,8 +10,8 @@ import { setupLayouts } from 'virtual:generated-layouts'
 import Products from '@/pages/Products.vue'
 import ListProducts from '@/pages/ListProducts.vue'
 import Novo from '@/pages/Novo.vue'
+import DetailProduct from '@/pages/DetailProduct.vue'
 import DefaultLayout from '@/layouts/default.vue'
-
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +32,11 @@ const router = createRouter({
           component: ListProducts,
         },
         {
+          path: '/detail-product',
+          name: 'DetailProduct',
+          component: DetailProduct,
+        },
+        {
           path: '/novo',
           name: 'Novo',
           component: Novo,
@@ -39,9 +44,6 @@ const router = createRouter({
       ],
     },
   ],
-
-  // routes,
-
 })
 
 export default router
